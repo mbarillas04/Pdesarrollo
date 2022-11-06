@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+ lang="">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+
+
+    <link href="css/estilos.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" />
+
+
+    <title>Tienda</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="banner-area">
+  
+      <ul class="nav justify-content-center">
+        <li class="nav-item col-xs-12">
+          <a class="nav-link active" aria-current="page" href="#" style="color: #f5bc42;" >Inicio </a>
+        </li>
+        <li class="nav-item col-xs-12">
+          <a class="nav-link" href="" style="color: #f5bc42;">Productos</a>
+        </li>
+        <li class="nav-item col-xs-12">
+          <a class="nav-link" href="#" style="color: #f5bc42;">Servicios</a>
+        </li>
+        <li class="nav-item col-xs-12">
+          <li class="nav-item col-xs-12">
+            <a class="nav-link" th:href="@{/configuracion}" style="color: #f5bc42;">Admin</a>
+          </li>
+        </li>
+        <a href="#" class="logo"><img src="img/amazon2.png" /></a>
+
+        <!--en esta parte esta el boton iniciar y cerrar session -->
+
+        <ul class="navbar-nav navbar-right">
+          <li sec:authorize="!isAuthenticated()">
+            <a class="btn btn-outline-primary col-xs-12" th:href="@{/login}"
+              >Iniciar Sesion</a
+            >
+          </li>
+
+          <li sec:authorize="isAuthenticated()" class="dropdown show">
+            <a
+              class="btn btn-outline-primary dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ><span sec:authentication="name"></span
+            ></a>
+            <!-- termina el boton iniciar y cerrar session -->
+          </li>
+        </ul>
+
+        <div>
+          <!--AQUI VA LA FORMA EN QUE SE DESPLIEGA EL BOTON DE CERRAR SESION PUEDE SER EN CASCADA O ALGO ASI -->
+          <form id="logoutForm" th:action="@{/logout}" method="post">
+            <button
+              class="dropdown-item"
+              onclick="document.getElementById('logoutForm').submit();"
+              type="submit"
+            >
+              Cerrar Sesion
+            </button>
+            <input
+              type="hidden"
+              th:name="${_csrf.parameterName}"
+              th:value="${_csrf.token}"
+            />
+          </form>
+        </div>
+      </ul> 
+    </div>
+    </div>
+    <div class="flexsearch col-12 col-sm-12 col-md-4">
+      <div class="flexsearch--wrapper">
+        <form class="flexsearch--form" th:action="@{/producto}">
+          <div class="flexsearch--input-wrapper">
+            <input name="url" class="flexsearch--input" type="search"  placeholder="buscar producto">
+
+          </div>
+        
+        </form>
+      </div>
+  </div>
+    <div class="row">
+      <div
+        class="card col-12 col-sm-12 col-md-4 text-white bg-dark"
+        style="width: 25rem; padding: 2%"
+      >
+        <img
+          src="https://m.media-amazon.com/images/I/61Y1P6uIRFL._AC_SL1500_.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+
+        <div class="card-body">
+          <h5 class="card-title">DJI Mini 3 Pro (DJI RC) </h5>
+          <p class="card-text">
+            dron de cámara ligero y plegable con video de 4K/60 fps,
+            foto de 48 MP, tiempo de vuelo de 34 minutos, detección
+            de obstáculos tridireccionales, ideal para fotografía
+            aérea y redes sociales.
+          </p>
+          <a href="#" class="btn btn-primary">Cotizar producto</a>
+        </div>
+      </div>
+
+      <div
+        class="card col-12 col-sm-12 col-md-4 text-white bg-dark"
+        style="width: 25rem; padding: 2%"
+      >
+        <img
+          src="https://m.media-amazon.com/images/I/617sGSjmC1L._AC_SL1500_.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <br><br>
+        <div class="card-body">
+          <h5 class="card-title">GoPro HERO11 Negro</h5>
+          <p class="card-text">
+            Cámara de acción impermeable con video Ultra HD 5.3K60,
+            fotos de 27 MP, sensor de imagen de 1/1.9 pulgadas,
+            transmisión en vivo, cámara web, estabilización.
+          </p>
+          <br><br>
+          <a href="#" class="btn btn-primary">Cotizar producto</a>
+        </div>
+      </div>
+
+      <div
+        class="card col-12 col-sm-12 col-md-4 text-white bg-dark"
+        style="width: 25rem; padding: 2%"
+      >
+        <img
+          src="https://m.media-amazon.com/images/I/71W1KvLH3sL._AC_SL1500_.jpg"
+          class="card-img-top"
+          alt="..."
+
+        />
+        <div class="card-body">
+          <h5 class="card-title">Cámara fotográfica EOS Rebel T7</h5>
+          <p class="card-text">
+            on lentes de 18-55 mm, f/3.5-5.6 y EF 75-300 mm, juego de doble acercamiento.
+          </p>
+          <br><br>
+          <br><br>
+          <a href="#" class="btn btn-primary">Cotizar producto</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <footer>
+        <div class="row">
+          <div class="card col-12 col-sm-12 col-md-4">
+            <div class="card-body">
+              <h5 class="card-company"> Nuestra Plataforma</h5>
+              <div>
+                En 2000, Amazon comenzó a ofrecer su plataforma de comercio
+                a otros minoristas y proveedores. Hoy en día, muchas empresas
+                están trabajando con Amazon Services para desarrollar su oferta
+                de comercio electrónico, de servicios técnicos y de servicio al
+                cliente y la gestión y el envío de los pedidos. Las principales
+                marcas también utilizan Amazon como canal de ventas, ofreciendo
+                sus productos directamente a los sitios de Amazon. Por último,
+                los desarrolladores externos de software utilizan Amazon Web
+                Services para crear aplicaciones y servicios que se proporcionan
+                a los clientes y vendedores de Amazon.
+              </div>
+            </div>
+          </div>
+
+          <div class="card col-12 col-sm-12 col-md-4">
+            <div class="card-body">
+              <h5 class="card-atributos">Mision y Vision</h5>
+              <p>La evolución de la página web de Amazon está determinada por
+                nuestro deseo de innovar constantemente, que siempre ha formado
+                parte del ADN de nuestra compañía. El comercio electrónico se
+                encuentra todavía en una etapa temprana. En los próximos años,
+                se verá cómo Amazon crea nuevas tecnologías, se expande a más
+                regiones geográficas y continua mejorando la vida de los
+                consumidores y vendedores de todo el mundo.
+              </p>
+              <p>Contáctanos</p>
+            
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</html>

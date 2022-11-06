@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.logo img{
+    margin: 80px;
+    width: 400px;
+}
+
+body {
+  background: #ffffff1a 0% 0% no-repeat padding-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.card-img-top {
+    width: 80%;
+    margin: 10px;
+    
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.container {
+    padding: 10px;
+    color: white;
+    width: 100%;
+    background-color: #24262b;
+    text-align: center;
+    height: 250px;
+}
+
+.row {
+  padding: 1%;
+  background: black 0% 0% no-repeat padding-box;
+  justify-content: center;
+}
+
+.row > div {
+  margin: 1%;
+  background: #42b6f5 0% 0% no-repeat padding-box;
+}
+
+footer {
+  margin: 0;
+  display: flex;
+  background: transparent linear-gradient(104deg, #42b6f5 0%, #1c2e59 100%) 0%
+    0% no-repeat padding-box;
+  opacity: 5;
+}
+
+.btn {
+  width: 150px;
+  height: 35px;
+  color: #f5bc42;
+  background: transparent 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+}
+
+.dropdown-item {
+  width: 150px;
+  height: 35px;
+  color: #f5bc42;
+  background: transparent 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  justify-content: center;
+}
+
+.banner-area {
+
+  width: 100%;
+  margin: 0;
+    color: white;
+  height: 300px;
+  #background-image: url(/img/amazon2.png);
+  -webkit-background-size: cover;
+  background-position: center;
+  justify-content: center;
+
+}
+
+
+
+.flexsearch--input {
+    text-align: center;
+    height: 40px;
+    width: 400px;
+
+    color: white;
+    padding: 0 46px 0 10px;
+    background: transparent linear-gradient(104deg, #42b6f5 5%, #1c2e59 100%) 0% 0% no-repeat padding-box;
+    border-radius: 35px; /* (height/2) + border-width */
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c2e59;
+    font-size: 14px;
+}
+
+.flexsearch--input{
+  color: white;
+  margin-bottom: 1%;
+
+ 
+}
+
+.flexsearch{
+  margin: 0 auto;
+
+}
+
+
+.nav{
+  margin-top: 1%;
+}
